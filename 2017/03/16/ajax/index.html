@@ -9,16 +9,24 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="你好世界">
+  <meta name="description" content="ajax 的原始步奏及原理
+创建XMLHttprequest对象 if(window.XMLHttprequest){ var xhr=new XMLHttprequest}esle{ var xhr.ActiveXObject(“Microsoft”); //兼容I6的对象}
+准备发送   open(get或post,地址，true或false)方法 里面有3个参数(1):请求方式为get或po">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my bolg">
-<meta property="og:url" content="http://yoursite.com/2017/03/16/新建文本文档/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/16/ajax/index.html">
 <meta property="og:site_name" content="my bolg">
-<meta property="og:description" content="你好世界">
-<meta property="og:updated_time" content="2017-03-16T11:35:13.502Z">
+<meta property="og:description" content="ajax 的原始步奏及原理
+创建XMLHttprequest对象 if(window.XMLHttprequest){ var xhr=new XMLHttprequest}esle{ var xhr.ActiveXObject(“Microsoft”); //兼容I6的对象}
+准备发送   open(get或post,地址，true或false)方法 里面有3个参数(1):请求方式为get或po">
+<meta property="og:image" content="http://yoursite.com/IMG src="file:///C:\Users\Administrator\AppData\Roaming\feiq\RichOle\3493756624.bmp"">
+<meta property="og:updated_time" content="2017-03-16T11:55:17.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my bolg">
-<meta name="twitter:description" content="你好世界">
+<meta name="twitter:description" content="ajax 的原始步奏及原理
+创建XMLHttprequest对象 if(window.XMLHttprequest){ var xhr=new XMLHttprequest}esle{ var xhr.ActiveXObject(“Microsoft”); //兼容I6的对象}
+准备发送   open(get或post,地址，true或false)方法 里面有3个参数(1):请求方式为get或po">
+<meta name="twitter:image" content="http://yoursite.com/IMG src="file:///C:\Users\Administrator\AppData\Roaming\feiq\RichOle\3493756624.bmp"">
   
     <link rel="alternative" href="/atom.xml" title="my bolg" type="application/atom+xml">
   
@@ -164,11 +172,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-新建文本文档" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ajax" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/16/新建文本文档/" class="article-date">
-  	<time datetime="2017-03-16T11:34:54.749Z" itemprop="datePublished">2017-03-16</time>
+      <a href="/2017/03/16/ajax/" class="article-date">
+  	<time datetime="2017-03-16T11:54:36.019Z" itemprop="datePublished">2017-03-16</time>
 </a>
     </div>
   
@@ -179,7 +187,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="你好世界"><a href="#你好世界" class="headerlink" title="你好世界"></a>你好世界</h3>
+        <h3 id="ajax-的原始步奏及原理"><a href="#ajax-的原始步奏及原理" class="headerlink" title="ajax 的原始步奏及原理"></a>ajax 的原始步奏及原理</h3><ol>
+<li>创建XMLHttprequest对象 if(window.XMLHttprequest){<br> var xhr=new XMLHttprequest<br>}esle{<br> var xhr.ActiveXObject(“Microsoft”); //兼容I6的对象<br>}</li>
+<li><p>准备发送   <code>open(get或post,地址，true或false)方法 里面有3个参数(1):请求方式为get或post (2):请求地址,(如果是get请求那么请求参数必须在url中传递,post参数却写在send()里并不要转码;如果是get请求那么必须转码,转码的方法写在地址后面用+连接地址encodeURL(参数);(3)异步和同步的标志位true :表示异步 false：表示同步</code></p>
+</li>
+<li><p>执行发送动作 <code>xhr.send();如果是get 那么参数就为null;如果是post 首先创建一个请求头:xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;)然后执行xhr.send(这是请请求参数)</code></p>
+</li>
+<li><p>指定毁掉函数<br>`xhr.onreadystatechange=function(){<br> if(xhr.readyState=4){ //表示服务器还回的数据可以使用了,但这个数据不一定是正确的所以还有判断xhr.status</p>
+<pre><code>if(xhr.status==200){//表示数据是正确的可以使用，不是200 都是错误的数据
+    var data=xhr.responseText;//拿到请求的数据了
+}
+</code></pre><p> }<br>}`<br>###readyState的状态和status的值</p>
+<ul>
+<li>readyState有5种状态0:<code>表示初始化</code>1：<code>执行发送</code> 2：<code>服务器已完全还回数据</code> 3：<code>数据在解析</code> 4：<code>可以使用了</code></li>
+<li>xhr.status有3种值 1:<code>200数据正常</code> 2:<code>404没找到资源</code> 3:<code>505服务器错误</code>；</li>
+</ul>
+</li>
+</ol>
+<h3 id="jsonp的原理-动态创建script标签，"><a href="#jsonp的原理-动态创建script标签，" class="headerlink" title="jsonp的原理:动态创建script标签，"></a>jsonp的原理:动态创建script标签，</h3><p>通过他的src的属性发送跨域请求，然后服务端响应回来的数据格式为函数调用【foo（）】，所以在发送请求必须先定义一个函数，并且函数的名字与参数传递的名字要一致<br><img src="IMG src=&quot;file:///C:\Users\Administrator\AppData\Roaming\feiq\RichOle\3493756624.bmp&quot;" alt=""></p>
+
       
     </div>
     
@@ -187,6 +213,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/03/16/css/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -200,7 +235,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="新建文本文档" data-title="" data-url="http://yoursite.com/2017/03/16/新建文本文档/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="">
+<div class="ds-share share" data-thread-key="ajax" data-title="" data-url="http://yoursite.com/2017/03/16/ajax/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
