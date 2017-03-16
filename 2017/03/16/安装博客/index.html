@@ -9,12 +9,42 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="hexo generate  在pulic push进去传html
+首先打开要传的文件 执行 git init
+在根目录创建一个.gitignore 文件
+把根目录的文件夹名字放进.gitignore里面
+执行git add.  在执行git commit -m ‘1’
+创建分支 git branch -分支名
+切换到分支上 git checkout -分支名
+在github 创建一个新的仓库
+g">
+<meta property="og:type" content="article">
 <meta property="og:title" content="my bolg">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/16/安装博客/index.html">
 <meta property="og:site_name" content="my bolg">
+<meta property="og:description" content="hexo generate  在pulic push进去传html
+首先打开要传的文件 执行 git init
+在根目录创建一个.gitignore 文件
+把根目录的文件夹名字放进.gitignore里面
+执行git add.  在执行git commit -m ‘1’
+创建分支 git branch -分支名
+切换到分支上 git checkout -分支名
+在github 创建一个新的仓库
+g">
+<meta property="og:image" content="http://p1.bpimg.com/567571/bec5efeb3b0f501d.png">
+<meta property="og:updated_time" content="2017-03-16T12:06:58.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my bolg">
+<meta name="twitter:description" content="hexo generate  在pulic push进去传html
+首先打开要传的文件 执行 git init
+在根目录创建一个.gitignore 文件
+把根目录的文件夹名字放进.gitignore里面
+执行git add.  在执行git commit -m ‘1’
+创建分支 git branch -分支名
+切换到分支上 git checkout -分支名
+在github 创建一个新的仓库
+g">
+<meta name="twitter:image" content="http://p1.bpimg.com/567571/bec5efeb3b0f501d.png">
   
     <link rel="alternative" href="/atom.xml" title="my bolg" type="application/atom+xml">
   
@@ -160,9 +190,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-安装博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-安装博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/03/16/安装博客/" class="article-date">
@@ -238,260 +266,42 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/16/ajax/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-ajax" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/16/ajax/" class="article-date">
-  	<time datetime="2017-03-16T12:10:49.728Z" itemprop="datePublished">2017-03-16</time>
-</a>
+<div class="ds-share share" data-thread-key="安装博客" data-title="" data-url="http://yoursite.com/2017/03/16/安装博客/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="ajax-的原始步奏及原理"><a href="#ajax-的原始步奏及原理" class="headerlink" title="ajax 的原始步奏及原理"></a>ajax 的原始步奏及原理</h3><ol>
-<li>创建XMLHttprequest对象 if(window.XMLHttprequest){<br> var xhr=new XMLHttprequest<br>}esle{<br> var xhr.ActiveXObject(“Microsoft”); //兼容I6的对象<br>}</li>
-<li><p>准备发送   <code>open(get或post,地址，true或false)方法 里面有3个参数(1):请求方式为get或post (2):请求地址,(如果是get请求那么请求参数必须在url中传递,post参数却写在send()里并不要转码;如果是get请求那么必须转码,转码的方法写在地址后面用+连接地址encodeURL(参数);(3)异步和同步的标志位true :表示异步 false：表示同步</code></p>
-</li>
-<li><p>执行发送动作 <code>xhr.send();如果是get 那么参数就为null;如果是post 首先创建一个请求头:xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;)然后执行xhr.send(这是请请求参数)</code></p>
-</li>
-<li><p>指定毁掉函数<br>`xhr.onreadystatechange=function(){<br> if(xhr.readyState=4){ //表示服务器还回的数据可以使用了,但这个数据不一定是正确的所以还有判断xhr.status</p>
-<pre><code>if(xhr.status==200){//表示数据是正确的可以使用，不是200 都是错误的数据
-    var data=xhr.responseText;//拿到请求的数据了
-}
-</code></pre><p> }<br>}`<br>###readyState的状态和status的值</p>
-<ul>
-<li>readyState有5种状态0:<code>表示初始化</code>1：<code>执行发送</code> 2：<code>服务器已完全还回数据</code> 3：<code>数据在解析</code> 4：<code>可以使用了</code></li>
-<li>xhr.status有3种值 1:<code>200数据正常</code> 2:<code>404没找到资源</code> 3:<code>505服务器错误</code>；</li>
-</ul>
-</li>
-</ol>
-<h3 id="jsonp的原理-动态创建script标签，"><a href="#jsonp的原理-动态创建script标签，" class="headerlink" title="jsonp的原理:动态创建script标签，"></a>jsonp的原理:动态创建script标签，</h3><p>通过他的src的属性发送跨域请求，然后服务端响应回来的数据格式为函数调用【foo（）】，所以在发送请求必须先定义一个函数，并且函数的名字与参数传递的名字要一致<br><img src="IMG src=&quot;file:///C:\Users\Administrator\AppData\Roaming\feiq\RichOle\3493756624.bmp&quot;" alt=""></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
+ </div>
+ 
 
 
 
 
 
-
-
-  
-    <article id="post-去重和c3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/16/去重和c3/" class="article-date">
-  	<time datetime="2017-03-16T12:10:23.464Z" itemprop="datePublished">2017-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="去重方法"><a href="#去重方法" class="headerlink" title="去重方法"></a>去重方法</h3><p>  var arr = [1,2,3,5,7,3,2,5,2,9,1];<br>        var tmp = [];<br>        for(var i = 0; i &lt; arr.length; i++){<br>            if(tmp.indexOf(arr[i]) == -1){<br>                tmp.push(arr[i]);<br>            }<br>        }<br>        console.log(tmp);</p>
-<h3 id="css3里的transtion的属性"><a href="#css3里的transtion的属性" class="headerlink" title="css3里的transtion的属性"></a>css3里的transtion的属性</h3><pre><code>    transition-property: background-color, left;
-    /*设置过渡持续时间*/
-    transition-duration: 1s;
-    /*设置过渡的延时时间*/
-    transition-delay: 2s;
-    /*设置过渡执行的速度*/
-    transition-timing-function: ease-in-out;
-    .pos:hover {
-    left: 400px;
-    background: green;
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/16/css/" class="article-date">
-  	<time datetime="2017-03-16T11:55:40.369Z" itemprop="datePublished">2017-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="css3"><a href="#css3" class="headerlink" title="css3-"></a>css3-</h1><p>使用 <code>CCS3</code> 实现的一些酷炫效果。</p>
-<p>自己学习 <code>CCS3</code> 的一个过程，没有将太多精力放在兼容性进行处理上，如果打开页面出现错位无法正常浏览，请使用最新版 <code>Chrome</code> 浏览器浏览打开。</p>
-<h2 id="个人博客园相关博文："><a href="#个人博客园相关博文：" class="headerlink" title="个人博客园相关博文："></a>个人博客园相关博文：</h2><p><a href="http://www.cnblogs.com/coco1s/p/5414153.html" target="_blank" rel="external">【CSS3进阶】酷炫的3D旋转透视</a></p>
-<p><a href="http://www.cnblogs.com/coco1s/p/5439619.html" target="_blank" rel="external">【Web动画】CSS3 3D 行星运转 &amp;&amp; 浏览器渲染原理</a></p>
-<h2 id="css3-3d-行星，实现简单的太阳系旋转（不要吐槽未够8颗行星）"><a href="#css3-3d-行星，实现简单的太阳系旋转（不要吐槽未够8颗行星）" class="headerlink" title="css3 3d 行星，实现简单的太阳系旋转（不要吐槽未够8颗行星）"></a>css3 3d 行星，实现简单的太阳系旋转（不要吐槽未够8颗行星）</h2><h4 id="效果示意图"><a href="#效果示意图" class="headerlink" title="效果示意图"></a>效果示意图</h4><p><a href="http://chokcoco.github.io/demo/css3demo/html/exampleSolarSystem.html" target="_blank" rel="external">太阳系运转demo戳我, 请用chrome打开</a></p>
-<p><img src="https://github.com/chokcoco/css3-/blob/master/images/solarSystem.gif" alt=""></p>
-<h2 id="下面这些是纯-CSS-实现不带任何-Javascript"><a href="#下面这些是纯-CSS-实现不带任何-Javascript" class="headerlink" title="下面这些是纯 CSS 实现不带任何 Javascript"></a>下面这些是纯 CSS 实现不带任何 Javascript</h2><p><a href="http://chokcoco.github.io/demo/css3demo/html/index.html" target="_blank" rel="external">3D透视立方体照片墙等demo地址戳我</a></p>
-<h4 id="立方体-3D-旋转"><a href="#立方体-3D-旋转" class="headerlink" title="立方体 3D 旋转"></a>立方体 3D 旋转</h4><p><img src="https://github.com/chokcoco/css3-/blob/master/images/example1.gif" alt=""></p>
-<h4 id="3D-透视照片墙"><a href="#3D-透视照片墙" class="headerlink" title="3D 透视照片墙"></a>3D 透视照片墙</h4><p><img src="https://github.com/chokcoco/css3-/blob/master/images/example2.gif" alt=""></p>
-<h4 id="跳跃的音符"><a href="#跳跃的音符" class="headerlink" title="跳跃的音符"></a>跳跃的音符</h4><p><img src="https://github.com/chokcoco/css3-/blob/master/images/example3.gif" alt=""></p>
-<h4 id="纯-css3-loading-图"><a href="#纯-css3-loading-图" class="headerlink" title="纯 css3 loading 图"></a>纯 css3 loading 图</h4><p><img src="https://github.com/chokcoco/css3-/blob/master/images/example4.gif" alt=""></p>
-<h2 id="web-动画作品集合-建议使用最新版-chrome-打开"><a href="#web-动画作品集合-建议使用最新版-chrome-打开" class="headerlink" title="web 动画作品集合(建议使用最新版 chrome 打开)"></a>web 动画作品集合(建议使用最新版 chrome 打开)</h2><p><a href="http://sbco.cc/demo/boom/demo.html" target="_blank" rel="external">BOOMJS 图片爆炸</a></p>
-<p><a href="http://chokcoco.github.io/demo/css3demo/html/exampleSolarSystem.html" target="_blank" rel="external">CSS3 3D 行星运转</a></p>
-<p><a href="http://chokcoco.github.io/demo/css3demo/html/index.html" target="_blank" rel="external">CSS3 3D 透视立方体照片墙</a></p>
-<p><a href="http://sbco.cc/demo/3dview/html/index.html" target="_blank" rel="external">CSS3 3D 视角 – 试试酷炫的 3D 视角</a></p>
-<p><a href="http://chokcoco.github.io/magicCss/html/index.html" target="_blank" rel="external">CSS3 奇思妙想 – 使用单标签完成各种图案</a></p>
-<p><a href="http://sbco.cc/demo/svg/html/index.html" target="_blank" rel="external">SVG奇思妙想</a></p>
-<p><a href="http://chokcoco.github.io/demo/curveJS/html/index.html" target="_blank" rel="external">Web 动画曲线运动</a></p>
-<p><a href="http://chokcoco.github.io/demo/homepage/html/index.html" target="_blank" rel="external">tweenmax动画</a></p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/16/hello-world/" class="article-date">
-  	<time datetime="2017-03-16T11:15:48.457Z" itemprop="datePublished">2017-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/16/hello-world/">
-        Hello World
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -515,8 +325,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
